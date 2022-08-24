@@ -1,0 +1,17 @@
+{
+	"ulid": "01GB749X4Z2C7W0BVRFP34ZA7X",
+	"minTime": 1661306400104,
+	"maxTime": 1661313600000,
+	"stats": {
+		"numSamples": 640775,
+		"numSeries": 1360,
+		"numChunks": 4780
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GB749X4Z2C7W0BVRFP34ZA7X"
+		]
+	},
+	"version": 1
+}

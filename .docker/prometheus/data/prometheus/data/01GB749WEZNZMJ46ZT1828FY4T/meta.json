@@ -1,0 +1,17 @@
+{
+	"ulid": "01GB749WEZNZMJ46ZT1828FY4T",
+	"minTime": 1661305760606,
+	"maxTime": 1661306400000,
+	"stats": {
+		"numSamples": 30504,
+		"numSeries": 562,
+		"numChunks": 562
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GB749WEZNZMJ46ZT1828FY4T"
+		]
+	},
+	"version": 1
+}
