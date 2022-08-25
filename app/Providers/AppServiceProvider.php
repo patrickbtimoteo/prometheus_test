@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(CollectorRegistry::class , function() {
-            $inMemory = new Redis();
+            $inMemory = new InMemory();
 
             $registry = new CollectorRegistry($inMemory);
             return $registry;

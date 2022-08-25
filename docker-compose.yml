@@ -52,10 +52,15 @@ services:
         image: prom/prometheus:latest
         hostname: prometheus
         container_name: example_prometheus
-        command: ["--config.file=/prometheus-config/prometheus.yml"]
         volumes:
-            -   ./.docker/prometheus/prometheus-config:/prometheus-config
-            -   ./.docker/prometheus/data/prometheus:/prometheus
+            - ./.docker/prometheus/prometheus-config/prometheus.yml:/etc/prometheus/prometheus.yml
+            - prometheus_data:/prometheus
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--storage.tsdb.path=/prometheus'
+            - '--web.console.libraries=/etc/prometheus/console_libraries'
+            - '--web.console.templates=/etc/prometheus/consoles'
+            - '--web.enable-lifecycle'
         ports:
             - "9092:9090"
         depends_on:
@@ -76,7 +81,9 @@ services:
 networks:
     bubble:
         external: true
+        driver: bridge
 
 volumes:
     mysql: {}
     nginx: {}
+    prometheus_data: {}
